@@ -1,0 +1,185 @@
+
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel='stylesheet'href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel='stylesheet' href="{{ asset('css/icomoon.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/styles.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+    <style>
+        form{color:black;}
+    </style>
+</head>
+<body>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+    <header id="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="logo" href="{{ path('super-admin',{'username':app.user.username})}}">
+
+
+                            <img src=" {{ asset ('img/logo-invert.png')}}" alt="Image Alternative text" title="Image Title" /><a  href="{{ path('super-admin',{'username':app.user.username})}}">  </a>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+
+                        <div class="form-group form-group-icon-left">
+
+                            <input type="hidden" class="form-control" name ="username" value="">
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-user-area clearfix">
+                            <ul class="top-user-area-list list list-horizontal list-border">
+                                <li class="top-user-area-avatar">
+                                    <a href="#">
+
+
+                                        <img class="origin round" src=" {{ asset ('img/40x40.png')}}" alt="Image Alternative text" title="AMaze" />Hi <a  href="{{ path('super-admin',{'username':app.user.username})}}">   {{ app.user.username }} </a>  </a>
+                                </li>
+                                <li> <a href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul class="slimmenu" id="slimmenu">
+
+
+                    <li><a href="#">Utilisateurs</a></li>
+                    <li><a href="#">Vol</a></li>
+                    <li><a href="#">Voiture</a></li>
+                    <li><a href="#">destination</a></li>
+                    <li><a href="#">voyage organisé</a></li>
+                    <li><a href="{{path('esprit_modele_list')}}">Navire</a>
+                        <ul>
+                            <li><a href="{{path('esprit_modele_add')}}">ajouter navire</a></li>
+                            <li><a href="{{path('esprit_modele_list')}}">affiche navire</a></li>
+                            <li><a href="{{path('recherche_modele')}}">rechercher navires </a></li>
+                        </ul></li>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+    <div class="container">
+        <form method="post">
+            <div class="input-daterange" data-date-format="MM d, D">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-icon-left">
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+
+
+
+            </div>
+            <h3>ajouter un Navire</h3>
+            {{ form(f) }}
+
+
+
+
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-5">
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="gap"></div>
+
+
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/slimmenu.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+    <script src="{{ asset('js/nicescroll.js') }}"></script>
+    <script src="{{ asset('js/dropit.js') }}"></script>
+    <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+    <script src="{{ asset('js/icheck.js') }}"></script>
+    <script src="{{ asset('js/fotorama.js') }}"></script>
+    <script src="{{ asset('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false') }}"></script>
+    <script src="{{ asset('js/typeahead.js') }}"></script>
+    <script src="{{ asset('js/card-payment.js') }}"></script>
+    <script src="{{ asset('js/magnific.js') }}"></script>
+    <script src="{{ asset('js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('js/fitvids.js') }}"></script>
+    <script src="{{ asset('js/tweet.js') }}"></script>
+    <script src="{{ asset('js/countdown.js') }}"></script>
+    <script src="{{ asset('js/gridrotator.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+{% endblock %}
+
+</div>
+</body>
+</html>

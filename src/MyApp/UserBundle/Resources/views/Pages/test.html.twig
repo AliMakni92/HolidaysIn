@@ -1,0 +1,411 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel="stylesheet"href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/icomoon.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/styles.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+</head>
+<body>
+
+
+<!-- FACEBOOK WIDGET -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+    <header id="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="logo" href="index.html">
+
+
+                            <img src="{{ asset ('img/logo-invert.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-user-area clearfix">
+                            <div class="top-user-area clearfix">
+                                <a href="Login.html">deconnexion </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul class="slimmenu" id="slimmenu">
+                    <li class="active"><a href="index.html">Home</a>
+
+                    </li>
+                    <li><a href="flight-search.html">Reserver vol</a></li>
+                    <li><a href="hotel-search.html">Reserver Hotel</a></li>
+
+
+                    <li><a href="car-search.html">Reserver Voiture</a></li>
+
+
+                    <li><a href="rentals-search.html">Reserver Croisiere</a></li>
+
+
+                    <li><a href="navire-search.html">Reserver Voyage organise</a></li>
+
+
+
+
+                    <li><a href="blog.html">blog</a></li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOP AREA -->
+    <div class="top-area show-onload">
+        <div class="bg-holder full">
+            <div class="bg-front full-height bg-front-mob-rel">
+                <div class="container full-height">
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="owl-carousel owl-slider owl-carousel-area visible-lg" id="owl-carousel-slider" data-nav="false">
+                <div class="bg-holder full">
+                    <div class="bg-mask"></div>
+
+
+
+                    <div class="bg-img" style="background-image:url{{ asset('img/2048x1365.png') }};"></div>
+                </div>
+                <div class="bg-holder full">
+                    <div class="bg-mask"></div>
+
+
+                    <div class="bg-img" style="background-image:url {{ asset ('img/2048x2048.png')}};"></div>
+                </div>
+                <div class="bg-holder full">
+                    <div class="bg-mask"></div>
+
+
+                    <div class="bg-img" style="background-image:url{{ asset ('img/2048x1365.png')}};"></div>
+                </div>
+            </div>
+
+
+            <div class="bg-img hidden-lg" style="background-image:url{{ asset ('img/2048x1365.png')}};"></div>
+            <div class="bg-mask hidden-lg"></div>
+        </div>
+    </div>
+    <!-- END TOP AREA  -->
+
+    <div class="gap"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row row-wrap" data-gutter="120">
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-briefcase box-icon-black round box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Combine & Save</a></h5>
+                                <p class="thumb-desc">Risus quisque egestas venenatis potenti lobortis senectus tellus sodales commodo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-thumbs-o-up box-icon-black round box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Best Travel Agent</a></h5>
+                                <p class="thumb-desc">Montes dictumst tortor a suspendisse accumsan blandit adipiscing proin ut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-send box-icon-black round box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Best Destinations</a></h5>
+                                <p class="thumb-desc">Cubilia malesuada odio aptent est etiam mollis velit dictumst posuere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gap gap-small"></div>
+    </div>
+    <div class="bg-holder">
+        <div class="bg-mask"></div>
+
+
+        <div class="bg-img" style="background-image:url{{ asset ('img/2048x1293.png')}};"></div>
+        <div class="bg-content">
+            <div class="container">
+                <div class="gap gap-big text-center text-white">
+                    <h2 class="text-uc mb20">Last Minute Deal</h2>
+                    <ul class="icon-list list-inline-block mb0 last-minute-rating">
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                    </ul>
+                    <h5 class="last-minute-title">The Peninsula - New York</h5>
+                    <p class="last-minute-date">Fri 14 Mar - Sun 16 Mar</p>
+                    <p class="mb20"><b>$120</b> / person</p><a class="btn btn-lg btn-white btn-ghost" href="#">Book Now <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gap"></div>
+        <h2 class="text-center">Top Destinations</h2>
+        <div class="gap">
+            <div class="row row-wrap">
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+
+
+                                <img src="{{ asset ('img/800x600.png')}}" alt="Image Alternative text" title="196_365" />
+                            </a>
+
+                        </header>
+                        <div class="img-left">
+
+
+                            <img src="{{ asset ('img/flags/32/fr.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title"><a class="text-darken" href="#">Paris</a></h4>
+                            <div class="thumb-caption">
+                                <p class="thumb-desc">Nullam potenti ac sagittis iaculis justo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+
+
+                                <img src="{{ asset ('img/800x600.png')}}" alt="Image Alternative text" title="El inevitable paso del tiempo" />
+                            </a>
+                        </header>
+                        <div class="img-left">
+
+
+                            <img src="{{ asset ('img/flags/32/hu.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title"><a class="text-darken" href="#">Budapest</a></h4>
+                            <div class="thumb-caption">
+                                <p class="thumb-desc">Sociis interdum sed a senectus porta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+
+
+                                <img src="{{ asset ('img/800x600.png')}}" alt="Image Alternative text" title="Upper Lake in New York Central Park" />
+                            </a>
+                        </header>
+                        <div class="img-left">
+
+
+                            <img src="{{ asset ('img/flags/32/us.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title"><a class="text-darken" href="#">New York</a></h4>
+                            <div class="thumb-caption">
+                                <p class="thumb-desc">Erat ultricies auctor tellus natoque cursus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+
+
+                                <img src="{{ asset ('img/800x600.png')}}" alt="Image Alternative text" title="people on the beach" />
+                            </a>
+                        </header>
+                        <div class="img-left">
+
+
+                            <img src="{{ asset ('img/flags/32/gr.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </div>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title"><a class="text-darken" href="#">Crete</a></h4>
+                            <div class="thumb-caption">
+                                <p class="thumb-desc">Cursus parturient commodo diam donec est</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="row row-wrap">
+                <div class="col-md-3">
+                    <a class="logo" href="index.html">
+
+
+                        <img src="{{ asset ('img/logo-invert.png')}}" alt="Image Alternative text" title="Image Title" />
+                    </a>
+                    <p class="mb20">Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
+                    <ul class="list list-horizontal list-space">
+                        <li>
+                            <a class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-twitter box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-google-plus box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-linkedin box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-pinterest box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Newsletter</h4>
+                    <form>
+                        <label>Enter your E-mail Address</label>
+                        <input type="text" class="form-control">
+                        <p class="mt5"><small>*We Never Send Spam</small>
+                        </p>
+                        <input type="submit" class="btn btn-primary" value="Subscribe">
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list list-footer">
+                        <li><a href="#">About US</a>
+                        </li>
+                        <li><a href="#">Press Centre</a>
+                        </li>
+                        <li><a href="#">Best Price Guarantee</a>
+                        </li>
+                        <li><a href="#">Travel News</a>
+                        </li>
+                        <li><a href="#">Jobs</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                        <li><a href="#">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Have Questions?</h4>
+                    <h4 class="text-color">+1-202-555-0173</h4>
+                    <h4><a href="#" class="text-color">support@traveler.com</a></h4>
+                    <p>24/7 Dedicated Customer Support</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/slimmenu.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+    <script src="{{ asset('js/nicescroll.js') }}"></script>
+    <script src="{{ asset('js/dropit.js') }}"></script>
+    <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+    <script src="{{ asset('js/icheck.js') }}"></script>
+    <script src="{{ asset('js/fotorama.js') }}"></script>
+    <script src="{{ asset('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false') }}"></script>
+    <script src="{{ asset('js/typeahead.js') }}"></script>
+    <script src="{{ asset('js/card-payment.js') }}"></script>
+    <script src="{{ asset('js/magnific.js') }}"></script>
+    <script src="{{ asset('js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('js/fitvids.js') }}"></script>
+    <script src="{{ asset('js/tweet.js') }}"></script>
+    <script src="{{ asset('js/countdown.js') }}"></script>
+    <script src="{{ asset('js/gridrotator.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+
+{% endblock %}
+    </div>
+</body>
+</html>
+
+
+

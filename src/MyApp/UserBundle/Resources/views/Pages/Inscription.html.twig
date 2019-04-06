@@ -1,0 +1,147 @@
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet"  href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+
+    {% endblock %}
+</head>
+<body class="full">
+
+<!-- FACEBOOK WIDGET -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+
+    <div class="full-page">
+        <div class="bg-holder full">
+            <div class="bg-mask"></div>
+
+
+            <div class="bg-img" style="background-image:url{{ asset ('img/1280x852.png')}};"></div>
+            <div class="bg-holder-content full text-white">
+                <a class="logo-holder" href="{{ path('esprit_holidays_in_homepage')}}">
+
+
+
+                    <img src="{{ asset ('img/logo-white.png')}}" alt="Image Alternative text" title="Image Title" />
+                </a>
+                <div class="full-center">
+                    <div class="container">
+                        <div class="row row-wrap" data-gutter="60">
+                            <div class="col-md-4">
+                                <div class="visible-lg">
+                                    <h3 class="mb15">Welcome to Traveler</h3>
+                                    <p>Ultrices lacus erat mattis nam sem porta nascetur luctus nunc litora diam ornare maecenas et phasellus molestie lorem habitant ultricies condimentum dignissim interdum erat sit praesent penatibus mattis pharetra penatibus</p>
+                                    <p>Sodales amet consectetur consectetur curae placerat consectetur penatibus fusce sagittis</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 class="mb15">Inscription</h3>
+                                <form>
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        <label>Nom</label>
+                                        <input class="form-control" placeholder="e.g. John" type="text" />
+                                    </div>
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        <label>Prenom</label>
+                                        <input class="form-control" placeholder="e.g.Doe" type="text" />
+                                    </div>
+
+
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        <label>Ville</label>
+                                        <input class="form-control" placeholder="e.g. Paris" type="text" />
+                                    </div>
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        <label>Login</label>
+                                        <input class="form-control" placeholder="e.g. John Doe" type="text" />
+                                    </div>
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
+                                        <label>Emai</label>
+                                        <input class="form-control" placeholder="e.g. johndoe@gmail.com" type="text" />
+                                    </div>
+                                    <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                                        <label>Password</label>
+                                        <input class="form-control" type="password" placeholder="my secret password" />
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" value="S'enregistrer" />
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/slimmenu.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+    <script src="{{ asset('js/nicescroll.js') }}"></script>
+    <script src="{{ asset('js/dropit.js') }}"></script>
+    <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+    <script src="{{ asset('js/icheck.js') }}"></script>
+    <script src="{{ asset('js/fotorama.js') }}"></script>
+    <script src="{{ asset('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false') }}"></script>
+    <script src="{{ asset('js/typeahead.js') }}"></script>
+    <script src="{{ asset('js/card-payment.js') }}"></script>
+    <script src="{{ asset('js/magnific.js') }}"></script>
+    <script src="{{ asset('js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('js/fitvids.js') }}"></script>
+    <script src="{{ asset('js/tweet.js') }}"></script>
+    <script src="{{ asset('js/countdown.js') }}"></script>
+    <script src="{{ asset('js/gridrotator.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+
+{% endblock %}
+</div>
+</body>
+</html>

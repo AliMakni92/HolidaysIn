@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html class="full">
+
+<head>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel="stylesheet"href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/icomoon.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/styles.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+</head>
+
+<body class="full">
+
+<!-- FACEBOOK WIDGET -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+
+    <div class="full-page">
+        <div class="bg-holder full">
+            <div class="bg-mask"></div>
+            <div class="bg-blur" style="background-image:url{{ asset ('img/1300x900.png')}}"></div>
+            <div class="bg-holder-content full text-white">
+                <a class="logo-holder" href="{{ path('my_app_user_homepage') }}">
+                    <img src="{{ asset('img/logo-white.png')}}" alt="Image Alternative text" title="Image Title" />
+                </a>
+                <div class="full-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <p class="text-hero">404</p>
+                                <h1>votre compte est bloqué</h1>
+                                <p></p><a class="btn btn-white btn-ghost btn-lg mt5" href="{{ path('my_app_user_homepage') }}"><i class="fa fa-long-arrow-left"></i> to Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#">About</a>
+                    </li>
+                    <li><a href="#">Help</a>
+                    </li>
+                    <li><a href="#">Hot Deals</a>
+                    </li>
+                    <li><a href="#">Popular Locations</a>
+                    </li>
+                    <li><a href="#">Cheap Flights</a>
+                    </li>
+                    <li><a href="#">Business</a>
+                    </li>
+                    <li><a href="#">Media</a>
+                    </li>
+                    <li><a href="#">Developers</a>
+                    </li>
+                    <li><a href="#">Advertise</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/slimmenu.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+        <script src="{{ asset('js/nicescroll.js') }}"></script>
+        <script src="{{ asset('js/dropit.js') }}"></script>
+        <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+        <script src="{{ asset('js/icheck.js') }}"></script>
+        <script src="{{ asset('js/fotorama.js') }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="{{ asset('js/typeahead.js') }}"></script>
+        <script src="{{ asset('js/card-payment.js') }}"></script>
+        <script src="{{ asset('js/magnific.js') }}"></script>
+        <script src="{{ asset('js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('js/fitvids.js') }}"></script>
+        <script src="{{ asset('js/tweet.js') }}"></script>
+        <script src="{{ asset('js/countdown.js') }}"></script>
+        <script src="{{ asset('js/gridrotator.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+
+    {% endblock %}
+</div>
+</body>
+
+</html>
+
+

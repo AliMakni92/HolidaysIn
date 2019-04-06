@@ -1,0 +1,789 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel='stylesheet'href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel='stylesheet' href="{{ asset('css/icomoon.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/styles.css') }}"/>
+    <link rel='stylesheet'href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+
+
+
+</head>
+
+<body>
+
+<!-- FACEBOOK WIDGET -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+    <header id="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="logo" href="{{ path('my_app_user_homepage')}}">
+
+                            <img src="{{ asset('img/logo-invert.png') }}" alt="Image Alternative text" title="Image Title" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-user-area clearfix">
+
+
+
+
+
+                                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                                <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul class="slimmenu" id="slimmenu">
+                    <li class="active"><a href="{{ path('my_app_user_homepage')}}">Home</a>
+
+                    </li>
+
+
+                    <li><a href="{{ path('carssearch')}}">Voiture</a></li>
+                    <li><a href="#">Flight</a></li>
+                    <li><a href="#">Croisiere</a></li>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">Voyage Organise</a></li>
+                    <li><a href="#">Contacts</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOP AREA -->
+    <div class="top-area show-onload">
+        <div class="bg-holder full">
+            <div class="bg-mask"></div>
+
+
+            <div class="bg-img" style="background-image:url( {{ asset(' img/2048x1365.png') }});"></div>
+            <video class="bg-video hidden-sm hidden-xs" preload="auto" autoplay="true" loop="loop" muted="muted" poster="{{ asset('img/video-bg.jpg') }}">
+
+
+
+
+                <source src="{{ asset(' media/loop.webm') }}" type="video/webm" />
+                <source src="{{ asset('media/loop.mp4') }}" type="video/mp4" />
+            </video>
+
+            <div class="bg-front full-height">
+                <div class="container rel full-height">
+                    <div class="search-tabs search-tabs-bg search-tabs-bottom">
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-building-o"></i> <span >Hotels</span></a>
+                                </li>
+                                <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-plane"></i> <span >Flights</span></a>
+                                </li>
+                                <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-home"></i> <span >Rentals</span></a>
+                                </li>
+                                <li><a href="#tab-4" data-toggle="tab"><i class="fa fa-car"></i> <span >Cars</span></a>
+                                </li>
+                                <li><a href="#tab-5" data-toggle="tab"><i class="fa fa-bolt"></i> <span >Activities</span></a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="tab-1">
+                                    <h2>Search and Save on Hotels</h2>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                    <label>Where are you going?</label>
+                                                    <input class="typeahead form-control" placeholder="City, Airport, Point of Interest or U.S. Zip Code" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="input-daterange" data-date-format="M d, D">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Check-in</label>
+                                                                <input class="form-control" name="start" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Check-out</label>
+                                                                <input class="form-control" name="end" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-select-plus">
+                                                                <label>Rooms</label>
+                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                    <label class="btn btn-primary active">
+                                                                        <input type="radio" name="options" />1</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />2</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3+</label>
+                                                                </div>
+                                                                <select class="form-control hidden">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option selected="selected">4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-select-plus">
+                                                                <label>Guests</label>
+                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                    <label class="btn btn-primary active">
+                                                                        <input type="radio" name="options" />1</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />2</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3+</label>
+                                                                </div>
+                                                                <select class="form-control hidden">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option selected="selected">4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg" type="submit">Search for Hotels</button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="tab-2">
+                                    <h2>Search for Cheap Flights</h2>
+                                    <form>
+                                        <div class="tabbable">
+                                            <ul class="nav nav-pills nav-sm nav-no-br mb10" id="flightChooseTab">
+                                                <li class="active"><a href="#flight-search-1" data-toggle="tab">Round Trip</a>
+                                                </li>
+                                                <li><a href="#flight-search-2" data-toggle="tab">One Way</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active" id="flight-search-1">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                        <label>From</label>
+                                                                        <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                        <label>To</label>
+                                                                        <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="input-daterange" data-date-format="M d, D">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                            <label>Departing</label>
+                                                                            <input class="form-control" name="start" type="text" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                            <label>Returning</label>
+                                                                            <input class="form-control" name="end" type="text" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group form-group-lg form-group-select-plus">
+                                                                            <label>Passngers</label>
+                                                                            <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                                <label class="btn btn-primary active">
+                                                                                    <input type="radio" name="options" />1</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />2</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />3</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />3+</label>
+                                                                            </div>
+                                                                            <select class="form-control hidden">
+                                                                                <option>1</option>
+                                                                                <option>2</option>
+                                                                                <option>3</option>
+                                                                                <option selected="selected">4</option>
+                                                                                <option>5</option>
+                                                                                <option>6</option>
+                                                                                <option>7</option>
+                                                                                <option>8</option>
+                                                                                <option>9</option>
+                                                                                <option>10</option>
+                                                                                <option>11</option>
+                                                                                <option>12</option>
+                                                                                <option>13</option>
+                                                                                <option>14</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="flight-search-2">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                        <label>From</label>
+                                                                        <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                                        <label>To</label>
+                                                                        <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="input-daterange" data-date-format="M d, D">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                            <label>Departing</label>
+                                                                            <input class="date-pick form-control" data-date-format="M d, D" type="text" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group form-group-lg form-group-select-plus">
+                                                                            <label>Passngers</label>
+                                                                            <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                                <label class="btn btn-primary active">
+                                                                                    <input type="radio" name="options" />1</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />2</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />3</label>
+                                                                                <label class="btn btn-primary">
+                                                                                    <input type="radio" name="options" />3+</label>
+                                                                            </div>
+                                                                            <select class="form-control hidden">
+                                                                                <option>1</option>
+                                                                                <option>2</option>
+                                                                                <option>3</option>
+                                                                                <option selected="selected">4</option>
+                                                                                <option>5</option>
+                                                                                <option>6</option>
+                                                                                <option>7</option>
+                                                                                <option>8</option>
+                                                                                <option>9</option>
+                                                                                <option>10</option>
+                                                                                <option>11</option>
+                                                                                <option>12</option>
+                                                                                <option>13</option>
+                                                                                <option>14</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg" type="submit">Search for Flights</button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="tab-3">
+                                    <h2>Find Your Perfect Home</h2>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                    <label>Where are you going?</label>
+                                                    <input class="typeahead form-control" placeholder="City, Airport, Point of Interest or U.S. Zip Code" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="input-daterange" data-date-format="M d, D">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Check-in</label>
+                                                                <input class="form-control" name="start" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Check-out</label>
+                                                                <input class="form-control" name="end" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-select-plus">
+                                                                <label>Rooms</label>
+                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                    <label class="btn btn-primary active">
+                                                                        <input type="radio" name="options" />1</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />2</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3+</label>
+                                                                </div>
+                                                                <select class="form-control hidden">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option selected="selected">4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group form-group-lg form-group-select-plus">
+                                                                <label>Guests</label>
+                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                                                    <label class="btn btn-primary active">
+                                                                        <input type="radio" name="options" />1</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />2</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3</label>
+                                                                    <label class="btn btn-primary">
+                                                                        <input type="radio" name="options" />3+</label>
+                                                                </div>
+                                                                <select class="form-control hidden">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option selected="selected">4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg" type="submit">Search for Vacation Rentals</button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="tab-4">
+                                    <h2>Search for Cheap Rental Cars</h2>
+                                    <form method="post">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                            <label>Pick-up Location</label>
+                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" name="nomville"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                            <label>Drop-off Location</label>
+                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="input-daterange" data-date-format="M d, D">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Pick-up Date</label>
+                                                                <input class="form-control" name="start" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>Drop-ff Date</label>
+                                                                <input class="form-control" name="end" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg" type="submit">Search for Rental Cars</button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="tab-5">
+                                    <h2>Search for Activities</h2>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+                                                    <label>Where are you going?</label>
+                                                    <input class="typeahead form-control" placeholder="City, Airport, Point of Interest or U.S. Zip Code" type="text" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="input-daterange" data-date-format="M d, D">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>From</label>
+                                                                <input class="form-control" name="start" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                                                <label>To</label>
+                                                                <input class="form-control" name="end" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg" type="submit">Search for Activities</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END TOP AREA  -->
+
+    <div class="gap"></div>
+
+
+    <div class="container">
+        <div class="text-center row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row row-wrap" data-gutter="60">
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-dollar box-icon-gray box-icon-center round box-icon-border box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Best Price Guarantee</a></h5>
+                                <p class="thumb-desc">Facilisis sollicitudin dolor dignissim pulvinar ultrices nullam vel ultricies phasellus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-lock box-icon-gray box-icon-center round box-icon-border box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Trust & Safety</a></h5>
+                                <p class="thumb-desc">Risus porttitor dignissim nibh purus ornare imperdiet nullam convallis mattis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumb">
+                            <header class="thumb-header"><i class="fa fa-send box-icon-gray box-icon-center round box-icon-border box-icon-big animate-icon-top-to-bottom"></i>
+                            </header>
+                            <div class="thumb-caption">
+                                <h5 class="thumb-title"><a class="text-darken" href="#">Best Destinations</a></h5>
+                                <p class="thumb-desc">Sollicitudin enim ad mauris lacus lectus a iaculis lorem pellentesque</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gap gap-small"></div>
+    </div>
+    <div class="bg-holder">
+        <div class="bg-mask"></div>
+
+
+        <div class="bg-blur" style="background-image:url({{ asset('img/1024x672.png') }});"></div>
+        <div class="bg-content">
+            <div class="container">
+                <div class="gap gap-big text-center text-white">
+                    <h2 class="text-uc mb20">Last Minute Deal</h2>
+                    <ul class="icon-list list-inline-block mb0 last-minute-rating">
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                        <li><i class="fa fa-star"></i>
+                        </li>
+                    </ul>
+                    <h5 class="last-minute-title">The Peninsula - New York</h5>
+                    <p class="last-minute-date">Fri 14 Mar - Sun 16 Mar</p>
+                    <p class="mb20"><b>$120</b> / person</p><a class="btn btn-lg btn-white btn-ghost" href="#">Book Now <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gap"></div>
+        <h2 class="text-center">Top Destinations</h2>
+        <div class="gap">
+            <div class="row row-wrap">
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+
+
+
+                            <a class="hover-img curved" href="#">
+                                <img src="{{ asset('img/800x600.png') }}" alt="Image Alternative text" title="Upper Lake in New York Central Park" /><i class="fa fa-plus box-icon-white box-icon-border hover-icon-top-right round"></i>
+                            </a>
+                        </header>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title">USA</h4>
+                            <p class="thumb-desc">Tellus cum ante sed mus vulputate scelerisque eu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+
+                                <img src="{{ asset('img/800x600.png') }}" alt="Image Alternative text" title="lack of blue depresses me" /><i class="fa fa-plus box-icon-white box-icon-border hover-icon-top-right round"></i>
+                            </a>
+                        </header>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title">Greece</h4>
+                            <p class="thumb-desc">Per fermentum etiam nisi platea dui posuere nibh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+                                <img src="{{ asset('img/800x600.png') }}" alt="Image Alternative text" title="people on the beach" /><i class="fa fa-plus box-icon-white box-icon-border hover-icon-top-right round"></i>
+                            </a>
+                        </header>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title">Australia</h4>
+                            <p class="thumb-desc">Netus eros sed nisl senectus natoque sapien maecenas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <header class="thumb-header">
+                            <a class="hover-img curved" href="#">
+                                <img src="{{ asset('img/800x600.png') }}" alt="Image Alternative text" title="the journey home" /><i class="fa fa-plus box-icon-white box-icon-border hover-icon-top-right round"></i>
+                            </a>
+                        </header>
+                        <div class="thumb-caption">
+                            <h4 class="thumb-title">Africa</h4>
+                            <p class="thumb-desc">Himenaeos proin in natoque porta sociis semper posuere</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="row row-wrap">
+                <div class="col-md-3">
+                    <a class="logo" href="{{ path('my_app_user_homepage')}}">
+
+                        <img src=" {{ asset('img/logo-invert.png') }}" alt="Image Alternative text" title="Image Title" />
+                    </a>
+                    <p class="mb20">Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
+                    <ul class="list list-horizontal list-space">
+                        <li>
+                            <a class="fa fa-facebook box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-twitter box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-google-plus box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-linkedin box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-pinterest box-icon-normal round animate-icon-bottom-to-top" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Newsletter</h4>
+                    <form>
+                        <label>Enter your E-mail Address</label>
+                        <input type="text" class="form-control">
+                        <p class="mt5"><small>*We Never Send Spam</small>
+                        </p>
+                        <input type="submit" class="btn btn-primary" value="Subscribe">
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list list-footer">
+                        <li><a href="#">About US</a>
+                        </li>
+                        <li><a href="#">Press Centre</a>
+                        </li>
+                        <li><a href="#">Best Price Guarantee</a>
+                        </li>
+                        <li><a href="#">Travel News</a>
+                        </li>
+                        <li><a href="#">Jobs</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                        <li><a href="#">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Have Questions?</h4>
+                    <h4 class="text-color">+1-202-555-0173</h4>
+                    <h4><a href="#" class="text-color">support@traveler.com</a></h4>
+                    <p>24/7 Dedicated Customer Support</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/slimmenu.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+        <script src="{{ asset('js/nicescroll.js') }}"></script>
+        <script src="{{ asset('js/dropit.js') }}"></script>
+        <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+        <script src="{{ asset('js/icheck.js') }}"></script>
+        <script src="{{ asset('js/fotorama.js') }}"></script>
+        <script src="{{ asset('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false') }}"></script>
+        <script src="{{ asset('js/typeahead.js') }}"></script>
+        <script src="{{ asset('js/card-payment.js') }}"></script>
+        <script src="{{ asset('js/magnific.js') }}"></script>
+        <script src="{{ asset('js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('js/fitvids.js') }}"></script>
+        <script src="{{ asset('js/tweet.js') }}"></script>
+        <script src="{{ asset('js/countdown.js') }}"></script>
+        <script src="{{ asset('js/gridrotator.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+    {% endblock %}
+</div>
+</body>
+
+</html>
+
+

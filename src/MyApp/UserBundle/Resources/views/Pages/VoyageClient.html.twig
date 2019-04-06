@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>cars</title>
+    {% block head %}
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="keywords" content="Template, html, premium, themeforest" />
+        <meta name="description" content="Traveler - Premium template for travel companies">
+        <meta name="author" content="Tsoy">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheet %}
+    <link rel="stylesheet"href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/icomoon.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/styles.css') }}"/>
+    <link rel="stylesheet"href="{{ asset('css/mystyles.css') }}"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700'  >
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' >
+
+    {% endblock %}
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.js') }}"></script>
+    {% endblock %}
+    {% endblock %}
+
+
+</head>
+
+<body>
+
+<!-- FACEBOOK WIDGET -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FACEBOOK WIDGET -->
+<div class="global-wrap">
+    <header id="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="logo" href="{{ path('profile_user')}}">
+                            <img src=" {{ asset ('img/logo-invert.png')}}" alt="Image Alternative text" title="Image Title" />
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-user-area clearfix">
+                            <ul class="top-user-area-list list list-horizontal list-border">
+                                <li class="top-user-area-avatar">
+                                    <a  href="{{ path('profile_user')}}">
+                                        <img class="origin round" src=" {{ asset ('img/40x40.png')}}" alt="Image Alternative text" title="AMaze" />Hi,  <a  href="{{ path('profile_user',{'username':app.user.username})}}">   {{app.user.username }}</a> </a>
+                                </li>
+                                <li> <a href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul class="slimmenu" id="slimmenu">
+
+
+
+                    <li><a href="#">Vol</a></li>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">voitures</a></li>
+                    <li><a href="#">Croisiere</a></li>
+                    <li><a href="{{ path('voyagesearch')}}">Voyage organisé</a></li>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="{{ path('media')}}">Media</a></li>
+                    <li><a href="{{ path('list_Reservation')}}">liste de reservations</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <div class="container">
+
+        <div class="mfp-with-anim mfp-hide mfp-dialog mfp-search-dialog" id="search-dialog">
+            <h3>Rechercher un Voyage</h3>
+            <form method="post">
+                <div class="input-daterange" data-date-format="MM d, D">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group form-group-icon-left">
+                                <label>Destination</label>
+                                <input  placeholder="entrez nom d'une ville" type="text" name="libelle"/>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <input class="btn btn-primary mt10" type="submit" value="Chercher voyage" />
+                </div>
+            </form>
+        </div>
+        <h3 class="booking-title"> Voyage organisé <small><a class="popup-text" href="#search-dialog" data-effect="mfp-zoom-out">Change search</a></small></h3>
+
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-9">
+
+                {% for v in ms %}
+                    <div>
+                        <a class="booking-item" href="{{ path('reserver1',{'idVoyage': v.idVoyage,'libelle':v.libelle,'duree':v.duree,'photo':v.photo,'prixParPersonne':v.prixParPersonne,'dateDeDepart':v.dateDeDepart | date('d/m/y'),'nbrePlacesDispo':v.nbrePlacesDispo,'username':username })}}">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="booking-item-car-img">
+                                        <img src="{{ v.photo }}" alt="Image Alternative text" title="Image Title" width=150 height=100 />
+                                        <p >id voyage :{{ v.idVoyage }}</p>
+                                        <p>destination :{{ v.libelle }}</p>
+                                        <p>duree :{{ v.duree }} jours</p>
+
+                                        <p> dateDeDepart :{{v.dateDeDepart | date('d/m/y')}}</p>
+                                        <p> nbrePlacesDispo: {{ v.nbrePlacesDispo }} places </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3"><span class="booking-item-price">{{ v.prixParPersonne }}</span><span>dt/personne</span>
+                                    <p class="booking-item-flight-class"></p><span class="btn btn-primary">Reserver</span>
+
+
+                                </div>
+                            </div>
+                        </a>
+
+
+
+                    </div>
+                {% endfor %}
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <ul class="pagination">
+                            <li class="active"><a href="#">1</a>
+                            </li>
+                            <li><a href="#">2</a>
+                            </li>
+                            <li><a href="#">3</a>
+                            </li>
+                            <li><a href="#">4</a>
+                            </li>
+                            <li><a href="#">5</a>
+                            </li>
+                            <li><a href="#">6</a>
+                            </li>
+                            <li><a href="#">7</a>
+                            </li>
+                            <li class="dots">...</li>
+                            <li><a href="#">43</a>
+                            </li>
+                            <li class="next"><a href="#">Next Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p>Not what you're looking for? <a class="popup-text" href="#search-dialog" data-effect="mfp-zoom-out">Try your search again</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gap"></div>
+    </div>
+
+
+
+
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/slimmenu.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-timepicker.js') }}"></script>
+        <script src="{{ asset('js/nicescroll.js') }}"></script>
+        <script src="{{ asset('js/dropit.js') }}"></script>
+        <script src="{{ asset('js/ionrangeslider.js') }}"></script>
+        <script src="{{ asset('js/icheck.js') }}"></script>
+        <script src="{{ asset('js/fotorama.js') }}"></script>
+        <script src="{{ asset('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false') }}"></script>
+        <script src="{{ asset('js/typeahead.js') }}"></script>
+        <script src="{{ asset('js/card-payment.js') }}"></script>
+        <script src="{{ asset('js/magnific.js') }}"></script>
+        <script src="{{ asset('js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('js/fitvids.js') }}"></script>
+        <script src="{{ asset('js/tweet.js') }}"></script>
+        <script src="{{ asset('js/countdown.js') }}"></script>
+        <script src="{{ asset('js/gridrotator.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+
+
+
+
+    {% endblock %}
+</div>
+</body>
+
+</html>

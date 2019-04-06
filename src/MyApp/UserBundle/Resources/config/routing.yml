@@ -1,0 +1,162 @@
+my_app_user_homepage:
+    path:     /
+    defaults: { _controller: MyAppUserBundle:Default:index }
+profile_user:
+    path:     /profil
+    defaults: { _controller: MyAppUserBundle:Default:profil }
+login:
+    path:     /admin
+    defaults: { _controller: MyAppUserBundle:Default:Auth }
+carssearch:
+    path:     /root
+    defaults: { _controller: MyAppUserBundle:Default:carssearch }
+my_app_mail_homepage:
+    path:     /Mail
+    defaults: { _controller: MyAppUserBundle:Mail:index }
+super-admin:
+    path:     /super-admin
+    defaults: { _controller: MyAppUserBundle:Default:SuperAdmin }
+agent:
+    path:     /agent
+    defaults: { _controller: MyAppUserBundle:Default:agent }
+afficher:
+    path:     /afficher
+    defaults: { _controller: MyAppUserBundle:Default:afficheUser }
+bloquer:
+    path:     /bloquer/{id}
+    defaults: { _controller: MyAppUserBundle:Default:bloquer }
+debloquer:
+    path:     /debloquer/{id}
+    defaults: { _controller: MyAppUserBundle:Default:debloquer }
+404:
+    path:     /pagenotfound
+    defaults: { _controller: MyAppUserBundle:Default:pnf }
+
+delete:
+    path:     /supp/{id}
+    defaults: { _controller: MyAppUserBundle:Default:delete }
+afficherVoiture:
+    path:     /afficherVoiture
+    defaults: { _controller: MyAppUserBundle:Voiture:afficheVoiture }
+addVoiture :
+    path:     /addVoiture
+    defaults: { _controller: MyAppUserBundle:Voiture:addVoiture }
+Delete_voiture:
+     path:     /deleteVoiture/{id}
+     defaults: { _controller: MyAppUserBundle:Voiture:delete }
+Update_voiture :
+     path:     /updateVoiture/{id}
+     defaults: { _controller: MyAppUserBundle:Voiture:update }
+
+cars:
+    path:     /aaa
+    defaults: { _controller: MyAppUserBundle:Voiture:afficher }
+reserver :
+     path:     /reserver
+     defaults: { _controller: MyAppUserBundle:Voiture:Reserver }
+my_app_mail_homepage:
+    path:     /Mail
+    defaults: { _controller: MyAppUserBundle:Mail:index }
+
+my_app_mail_accuse:
+    path:     /success
+    defaults: { _controller: MyAppUserBundle:Mail:success }
+vol:
+    path:     /vol
+    defaults: { _controller: MyAppUserBundle:Vol:listvol }
+
+afficherVoyageOrganiser:
+    path:     /afficherVoyageOrganiser
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:afficheVoyageOrganiser }
+addVoyageOrganiser :
+    path:     /addVoyageOrganiser
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:addVoyageOrganiser }
+DeleteVoyageOrganiser:
+    path:     /deleteVoyageOrganiser/{id}
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:delete }
+updateVoyageOrganiser:
+    path:     /updateVoyageOrganiser/{id}
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:update }
+
+
+travel:
+    path:     /aaa1
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:afficher }
+reserver1 :
+     path:     /reserver1
+     defaults: { _controller: MyAppUserBundle:VoyageOrganiser:Reserver }
+
+media:
+    path:     /media1
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:media }
+
+list_Reservation:
+    path:    /listRes1
+    defaults: { _controller: MyAppUserBundle:VoyageOrganiser:listReservation}
+voyagesearch:
+    path:     /root1
+    defaults: { _controller: MyAppUserBundle:Default:voyagesearch }
+
+
+esprit_modele_list:
+    path:    /listNavire
+    defaults: { _controller: MyAppUserBundle:Navire:list }
+esprit_modele_add:
+    path:    /addNavire
+    defaults: { _controller: MyAppUserBundle:Navire:add2 }
+
+Delete_modele:
+    path:    /deleteNavire/{idNavire}
+    defaults: { _controller: MyAppUserBundle:Navire:delete }
+
+update_modele:
+    path:    /updateNavire/{idNavire}
+    defaults: { _controller: MyAppUserBundle:Navire:update }
+
+recherche_modele:
+    path:    /rechercherNavire
+    defaults: { _controller: MyAppUserBundle:Navire:recherche }
+affiche:
+    path:    /cn
+    defaults: { _controller: MyAppUserBundle:Navire:listClient }
+Reserver2:
+    path:    /detail
+    defaults: { _controller: MyAppUserBundle:Navire:Reserver }
+Delete_Reservation:
+    path:    /deleteRes
+    defaults: { _controller: MyAppUserBundle:Navire:deleteReservation}
+list_Reservation:
+    path:    /listRes
+    defaults: { _controller: MyAppUserBundle:Navire:listReservation}
+grapheChartLine:
+    path:    /chartLine
+    defaults: { _controller: MyAppUserBundle:Navire:graphe }
+
+
+
+
+
+afficherVol:
+    path:     /afficherVol
+    defaults: { _controller: MyAppUserBundle:Vol:afficheVol }
+addVol :
+    path:     /addVol
+    defaults: { _controller: MyAppUserBundle:Vol:addVol }
+deleteVol:
+    path:     /deleteVol/{numVol}
+    defaults: { _controller: MyAppUserBundle:Vol:delete }
+updateVol:
+    path:     /updateVol/{numVol}
+    defaults: { _controller: MyAppUserBundle:Vol:update }
+afficherVolClient:
+    path:     /afficherVolClient
+    defaults: { _controller: MyAppUserBundle:Vol:afficheVolClient }
+ReserverVol:
+    path:    /detailvol
+    defaults: { _controller: MyAppUserBundle:Vol:ReserverVol }
+listeReserverVol:
+    path:    /listReservationVol
+    defaults: { _controller: MyAppUserBundle:Vol:listReservationVol }
+
+
+
